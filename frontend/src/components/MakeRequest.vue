@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <div class="col-md-12">
+    <div class="col-lg-12">
       <h1><img src="../assets/slack-chat.png" />Boun - CmpE Slack Katılma İsteği</h1>
       <p>
         Bölüm öğrencilerinin dersleri tartışıp muhabbet edebileceği, teknoloji
         konuşup oyun arkadaşı bulabileceği bir slack grubu.
       </p>
     </div>
-    <div class="col-md-12">
+    <div class="col-lg-12">
       <div class="alert alert-success" v-if="success">
         <strong>Başarılı!</strong> {{ success }}
       </div>
@@ -15,20 +15,20 @@
     <div v-if="!success">
       <div class="clearfix">
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <div class="input-container">
           <label for="name">Ad</label><br  />
           <input type="text" name="name" v-model="firstName"/>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <div class="input-container">
           <label for="surname">Soyad</label><br  />
           <input type="text" name="surname" v-model="lastName" />
         </div>
       </div>
       <div class="clearfix"></div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="input-container">
           <label for="email">Email</label><br  />
           <input type="email" name="email" v-model="email" />
@@ -36,7 +36,7 @@
       </div>
       <div class="clearfix">
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <div class="input-container">
           <label for="years">Giriş yılın</label><br  />
           <select name="years" v-model="entrance">
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="clearfix"></div>
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="input-container">
           <label>
             <input type="checkbox" name="who" value="yes" v-model="isCmpe"/>
@@ -54,14 +54,14 @@
         </div>
       </div>
       <div class="clearfix"></div>
-      <div class="col-md-4 error__container" v-if="error">
+      <div class="col-lg-4 error__container" v-if="error">
         <p>
           Hata! {{error}}
         </p>
       </div>
       <div class="clearfix">
       </div>
-      <div class="col-md-3">
+      <div class="col-lg-3">
         <button v-on:click="postRequest">Davet İsteği Gönder</button>
       </div>
     </div>
