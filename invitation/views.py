@@ -33,7 +33,7 @@ def invite(request, student_id):
     print(student_id)
     student = get_object_or_404(Student, pk=student_id)
     student.inviter = request.user
-    student.save()
+    student.save() #burasının sanki responseda olması lazım
 
     data = {'email': student.email, 'token': os.environ.get('SLACK_ACCESS_TOKEN'), 'set_active': 'true'}
     url = 'https://' + os.environ.get('SLACK_TEAM_NAME') + '.slack.com/api/users.admin.invite'
