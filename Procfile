@@ -1,1 +1,1 @@
-web: python3 manage.py runserver
+web: gunicorn cmpeslack.wsgi --log-file -
