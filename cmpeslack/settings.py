@@ -25,7 +25,7 @@ SECRET_KEY = 'u#mb!zf=coe$&bv@19*629+8b(t#r18!5@fdh=9_@=lq0#9mxy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cmpe-slack.herokuapp.com']
 
 
 # Application definition
