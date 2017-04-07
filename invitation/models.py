@@ -15,7 +15,7 @@ class Student(models.Model):
         if self.inviter:
             return self.inviter
         else:
-            return mark_safe('<button id=' + str(self.id) + ' type="">Onayla</button>')
+            return mark_safe('<button class="invite" id=' + str(self.id) + ' type="">Onayla</button>')
 
     def __str__(self):
         return self.name
