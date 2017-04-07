@@ -19,7 +19,6 @@ def index(request):
 def request(request):
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
-
     first_name = body['firstName']
     last_name = body['lastName']
     email = body['email']
@@ -33,6 +32,9 @@ def request(request):
 def invite(request, student_id):
     print(student_id)
     student = get_object_or_404(Student, pk=student_id)
+    student.inviter = request.user
+    student.save()
+
     data = {'email': student.email, 'token': os.environ.get('SLACK_ACCESS_TOKEN'), 'set_active': 'true'}
     url = 'https://' + os.environ.get('SLACK_TEAM_NAME') + '.slack.com/api/users.admin.invite'
     r = requests.post(url, data = data)

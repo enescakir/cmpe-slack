@@ -6,14 +6,19 @@ $(document).ready(function(){
     $.ajax({
         url : "/request/" + studentID + "/invite",
         type: "POST",
-        contentType: "text/html; charset=utf-8",
+        data: JSON.stringify({"student-id":studentID}),
+        contentType: 'application/json; charset=utf-8',
+        dataType:"json",
         success: function(data, textStatus, jqXHR)
         {
-          alert("The paragraph was clicked.");
+          location.reload();
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
-     
+          alert("Bir sorun var. Konsola bak")
+          console.log(jqXHR)
+          console.log(textStatus)
+          console.log(errorThrown)
         }
     });
   });
