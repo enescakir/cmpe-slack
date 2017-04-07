@@ -1,3 +1,4 @@
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
@@ -27,7 +28,7 @@ def request(request):
     student = Student(name= first_name + " " + last_name, email=email, entrance=entrance, department=department)
     student.save()
     return HttpResponse(student)
-    
+
 @csrf_exempt
 def invite(request, student_id):
     student = get_object_or_404(Student, pk=student_id)
