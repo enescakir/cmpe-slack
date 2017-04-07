@@ -9,3 +9,6 @@ class Student(models.Model):
     entrance = models.CharField(max_length=4)
     created_at = models.DateTimeField()
     inviter = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+
+    def __str__(self):
+        return self.name
