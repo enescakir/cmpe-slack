@@ -11,7 +11,11 @@ $(document).ready(function(){
         dataType:"json",
         success: function(data, textStatus, jqXHR)
         {
-          location.reload();
+          if(data.ok){
+            location.reload();
+          } else {
+            alert(data.error)
+          }
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
